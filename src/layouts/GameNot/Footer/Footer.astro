@@ -1,0 +1,28 @@
+---
+import Logo from "../../../assets/images/logo.png";
+import Image from "astro/components/Image.astro";
+---
+<footer>
+    <div class="footer-flex">
+        <div class="logo-wrapper">
+            <a href="/"><Image src={Logo} class="footer-logo" alt="footer-logo"/></a>
+        </div>
+        <ul class="menu-wrapper">
+            <li>
+                <a href="/"> Home </a> 
+            </li>
+            <li>
+                <a href="/about"> About </a>
+            </li>
+            <li>
+                <a href="/projects"> Projects </a>
+            </li>
+        </ul>
+    </div>
+</footer>
+<style>
+    .footer-flex{
+        display: flex;
+        justify-content: space-between;
+    }
+</style>

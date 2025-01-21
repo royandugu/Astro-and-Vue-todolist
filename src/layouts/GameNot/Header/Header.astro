@@ -8,13 +8,42 @@ import Image from "astro/components/Image.astro";
     <div class="container">
         <div class="header-flex">
             <div class="logo-wrapper">
-                <Image src={Logo} alt="logo" />
+                <a href="/"><Image src={Logo} alt="logo" class="web-logo"/></a>
             </div>
             <ul class="menu-wrapper">
                 <li>
-
+                    <a href="/"> Home </a> 
+                </li>
+                <li>
+                    <a href="/about"> About </a>
+                </li>
+                <li>
+                    <a href="/projects"> Projects </a>
                 </li>
             </ul>
         </div>
     </div>
 </header>
+
+<style>
+    .web-logo{
+        max-width: 30px;
+        width: 100%;
+    }
+    .header-flex{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .menu-wrapper{
+        display: flex;
+        gap:20px;
+    }
+    .menu-wrapper li{
+        list-style: none;
+    }
+    .menu-wrapper a{
+        color: #000;
+        text-decoration: none;
+    }
+</style>
