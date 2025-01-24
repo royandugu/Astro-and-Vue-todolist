@@ -1,9 +1,23 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import storyblok from '@storyblok/astro';
+import { loadEnv } from 'vite';
 
 import vue from '@astrojs/vue';
 
-// https://astro.build/config
+const env = loadEnv("", process.cwd(), 'STORYBLOK');
+
 export default defineConfig({
-  integrations: [vue()]
+  integrations: [
+    storyblok({
+      accessToken: env.STORYBLOK_TOKEN,
+      components: {
+        blogPost: 'storyblok/BlogPost',
+      },
+      apiOptions: {
+        region: 'us', 
+      },
+    }),
+    vue()
+  ]
 });
